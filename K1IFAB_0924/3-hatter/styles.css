@@ -1,0 +1,31 @@
+section {
+    position: relative;
+}
+
+.bg-color {
+    background-color: #99FF99;
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    height: 100%;
+    z-index: -1;
+}
+
+.text-highlighted {
+    text-align: center;
+    font-size: 16px;
+    color: yellow;
+}
+
+.border-bottom-double {
+    border-bottom-style: double;
+}
+
+.mw-500 {
+    text-align: justify;
+    max-width: 500px;
+}
