@@ -1,0 +1,39 @@
+th, td {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.bg-gray {
+    background-color: gray;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-beige {
+    background-color: beige;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+
+.top-right {
+    text-align: right;
+    vertical-align: top;
+}
+
+.bottom-center {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.center {
+    text-align: center;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
