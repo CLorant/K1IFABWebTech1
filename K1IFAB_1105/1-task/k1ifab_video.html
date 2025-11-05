@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videó lejátszása_K1IFAB</title>
+
+    <style>
+        .grid {
+            padding-bottom: 2rem;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: auto;
+        }
+
+        footer {
+            padding-top: 2rem;
+            border-top: 2px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Videó lejátszása_K1IFAB</h1>
+    </header>
+
+    <section>
+        <video width="320" height="240" id="video">
+            <source src="k1ifab_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="grid">
+            <div>
+                <button onclick="startVideo()">Indítás</button>
+                <button onclick="pauseVideo()">Leállítás</button>
+                <button onclick="toggleVideo()">Indítás / Leállítás</button>
+            </div>
+
+            <div>
+                <div>
+                    <button onclick="setVolume(0)">Néma</button>
+                    <button onclick="setVolume(25)">Halk</button>
+                    <button onclick="setVolume(100)">Hangos</button>
+                    <button onclick="setPlayback(0.25)">Nagyon lassú</button>
+                    <button onclick="setPlayback(0.5)">Lassú</button>
+                    <button onclick="setPlayback(1)">Normál</button>
+                    <button onclick="setPlayback(1.5)">Gyorsabb</button>
+                    <button onclick="setPlayback(2)">Nagyon gyors</button>
+                </div>
+    
+                <div>
+                    <button onclick="setSize(720, 480)">Kicsi</button>
+                    <button onclick="setSize(1080, 720)">Közepes</button>
+                    <button onclick="setSize(1920, 1080)">Nagy</button>
+                    <button onclick="isVideoOver()">Befejeződött-e</button>
+                    <button onclick="getVideoLength()">Videó hossza (mp)</button>
+                    <button onclick="getVideoPosition()">Jelenlegi pozíció</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Forrás: <a
+            href="https://www.w3schools.com/html/html5_video.asp">https://www.w3schools.com/html/html5_video.asp</a>
+    </footer>
+</body>
+
+<script>
+    const video = document.getElementById('video')
+
+    function startVideo() {
+        video.play()
+    }
+
+    function pauseVideo() {
+        video.pause();
+    }
+
+    function toggleVideo() {
+        video.paused ? video.play() : video.pause();
+    }
+
+    function setVolume(volume) {
+        video.volume = volume;
+    }
+
+    function setPlayback(speed) {
+        video.playbackRate = speed;
+    }
+
+    function setSize(width, height) {
+        video.width = width;
+        video.height = height;
+    }
+
+    function isVideoOver() {
+        alert("Videó vége: " + video.ended);
+    }
+
+    function getVideoLength() {
+        alert("Videó hossza: " + video.duration);
+    }
+
+    function getVideoPosition() {
+        alert("Videó pozíciója: " + video.currentTime);
+    }
+</script>
+
+</html>
