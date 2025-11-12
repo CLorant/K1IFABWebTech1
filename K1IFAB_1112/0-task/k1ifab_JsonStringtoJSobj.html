@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JsonStringtoJSobj</title>
+</head>
+<body>
+    <header>
+        <h1>JSON fájl feldolgozás, beolvasás - Javascript-ben</h1>
+    </header>
+    <section>
+        <h2>JSON:</h2>
+        <p id="json-content"></p>
+        <button onclick="parseJSON()">JSON beolvasás</button>
+    </section>
+    <script>
+        const jsonString = `[{"nev":"HTML5","kiterjesztes":".html"},{"nev":"CSS3","kiterjesztes":".css"},{"nev":"JavaScript","kiterjesztes":".js"}]`;
+        function parseJSON() {
+            const json = JSON.parse(jsonString);
+            const jsonContent = document.getElementById('json-content');
+            
+            let i = 0;
+            let text = "";
+            while (i < 3) {
+                text += "Név: " + json[i].nev + ", kiterjesztés: " + json[i].kiterjesztes + "<br>";
+                i++;
+            }
+            jsonContent.innerHTML = text;
+        }
+    </script>
+</body>
+</html>

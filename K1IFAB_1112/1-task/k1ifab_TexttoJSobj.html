@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Text konvertálása JavaScript objektummá!</title>
+</head>
+<body>
+    <header>
+        <h1>JSON Text konvertálása JavaScript objektummá!</h1>
+    </header>
+    <section>
+
+    </section>
+    <section>
+        <h2>JSON:</h2>
+        <p id="json-content"></p>
+        <button onclick="parseJSON()">JSON beolvasás</button>
+    </section>
+    <script>
+        const jsonText = `[{nev":"Nagy Ferenc","iranyitoszam":1234,"varos":"Miskolc","egyetem":"Miskolci Egyetem"}]`;
+        function parseJSON() {
+            const json = JSON.stringify(jsonText);
+            const jsonContent = document.getElementById('json-content');
+            jsonContent.innerHTML = json;
+        }
+    </script>
+</body>
+</html>
