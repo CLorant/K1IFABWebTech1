@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K1IFAB Órarend 2025</title>
+</head>
+<body>
+
+<h1>K1IFAB Órarend 2025</h1>
+
+<button id="loadBtn">Órarend betöltése</button>
+
+<div id="schedule"></div>
+
+<script>
+    document.getElementById("loadBtn").addEventListener("click", function() {
+
+        fetch("orarendK1IFAB.json")
+            .then(response => response.json())
+            .then(data => {
+
+                const out = document.getElementById("schedule");
+                out.innerHTML = "";
+
+                const orak = data.K1IFAB_orarend.ora;
+
+                orak.forEach(ora => {
+                    const t = document.createElement("p");
+                    t.innerText = "Tárgy: " + ora.targy;
+                    t.style.color = "blue";
+                    out.appendChild(t);
+
+                    const h = document.createElement("p");
+                    h.innerText = "Helyszín: " + ora.helyszin;
+                    out.appendChild(h);
+
+                    const o = document.createElement("p");
+                    o.innerText = "Oktató: " + ora.oktato;
+                    out.appendChild(o);
+
+                    const sz = document.createElement("p");
+                    sz.innerText = "Szak: " + ora.szak;
+                    out.appendChild(sz);
+
+                    const id = document.createElement("p");
+                    id.innerText = "Időpont: " + 
+                        ora.idopont.nap + " " +
+                        ora.idopont.tol + ":00 - " + 
+                        ora.idopont.ig + ":00";
+                    out.appendChild(id);
+                });
+
+            })
+            .catch(err => {
+                document.getElementById("schedule").innerText = "Hiba történt: " + err;
+            });
+
+    });
+</script>
+
+</body>
+</html>

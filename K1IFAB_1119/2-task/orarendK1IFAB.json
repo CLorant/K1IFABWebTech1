@@ -1,0 +1,83 @@
+{
+    "K1IFAB_orarend": {
+        "ora": [
+            {
+                "targy": "Web Technológiák I",
+                "idopont": {
+                    "nap": "Hétfő",
+                    "tol": 10,
+                    "ig": 12
+                },
+                "helyszin": "III előadó",
+                "oktato": "Dr. Johnny Test",
+                "szak": "BP"
+            },
+            {
+                "targy": "Angol műszaki szaknyelv",
+                "idopont": {
+                    "nap": "Hétfő",
+                    "tol": 12,
+                    "ig": 14
+                },
+                "helyszin": "A1/101",
+                "oktato": "Dr. Johnny Test",
+                "szak": "BP"
+            },
+            {
+                "targy": "Mesterséges Intelligencia alapjai",
+                "idopont": {
+                    "nap": "Kedd",
+                    "tol": 10,
+                    "ig": 14
+                },
+                "helyszin": "XXXII előadó",
+                "oktato": "Dr. Johnny Test",
+                "szak": "BP"
+            },
+            {
+                "targy": "Algoritmusok és vizsgálatuk",
+                "idopont": {
+                    "nap": "Kedd",
+                    "tol": 10,
+                    "ig": 14
+                },
+                "helyszin": "A1/304",
+                "oktato": "Dr. Házy Attila",
+                "szak": "BP"
+            },
+            {
+                "targy": "Bevezetés a virtuális valóságba",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": 8,
+                    "ig": 12
+                },
+                "helyszin": "A1/317",
+                "oktato": "Dr. Johnny Test",
+                "szak": "BP"
+            },
+            {
+                "targy": "Web Technológiák I",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": 12,
+                    "ig": 14
+                },
+                "helyszin": "Info/101",
+                "oktato": "dr. Bednarik László",
+                "szak": "BP"
+            },
+            {
+                "targy": "Vállalati információs rendszerek fejleszése",
+                "idopont": {
+                    "nap": "Szerda",
+                    "tol": 14,
+                    "ig": 18
+                },
+                "helyszin": "Info/103",
+                "oktato": "Dr. Johnny Test",
+                "szak": "BP"
+            }
+        ]
+    }
+}

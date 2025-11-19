@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tömbökön belüli tömbök ciklusa</title>
+</head>
+<body>
+    <section>
+        <h1>Tömbökön belüli tömbök ciklusa</h1>
+
+        <span id="name">asd</span>
+        (<span id="age">20</span>)
+        <div id="cars">
+
+        </div>
+    </section>
+    <script>
+        const CLPObj = {
+            "name": "Czibik Lóránt Patrik",
+            "age": 23,
+            "cars": [
+                {
+                    "name": "Toyota",
+                    "models": ["CHR", "Corolla", "Proace"]
+                },
+                {
+                    "name": "Ford",
+                    "models": ["Kuga", "Mondeo", "Mustang"]
+                },
+                {
+                    "name": "BMW",
+                    "models": ["320", "X3", "X5"]
+                },
+                {
+                    "name": "Fiat",
+                    "models": ["500", "Panda", "Tipo"]
+                },
+            ]
+        };
+
+        document.getElementById("name").innerText = CLPObj["name"];
+        document.getElementById("age").innerText = CLPObj["age"];
+        const cars = document.getElementById("cars");
+
+        for (const car of CLPObj["cars"]) {
+            const carName = document.createElement("h3");
+            carName.innerText = car["name"];
+            cars.appendChild(carName);
+
+            const carList = document.createElement("ul");
+            
+            for (const model of car["models"]) {
+                const modelItem = document.createElement("li");
+                modelItem.innerText = model;
+                carList.appendChild(modelItem);
+            }
+
+            cars.appendChild(carList);
+        }
+    </script>
+</body>
+</html>
