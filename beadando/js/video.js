@@ -12,6 +12,7 @@ const playbackSlider = document.getElementById('playback');
 const playbackValue = document.getElementById('playback-value');
 const fullscreenBtn = document.getElementById('fullscreen');
 const iconFullscreen = document.getElementsByClassName('icon-fullscreen')[0];
+const timeline = document.getElementById('timeline');
 
 video.volume = 1;
 video.playbackRate = 1;
@@ -65,10 +66,16 @@ controlBtn.addEventListener('click', () => {
 video.addEventListener('play', updateControlIcons);
 video.addEventListener('pause', updateControlIcons);
 video.addEventListener('ended', updateControlIcons);
-video.addEventListener('timeupdate', updateTime);
+video.addEventListener('timeupdate', () => {
+    updateTime();
+    if (video.duration) {
+        timeline.value = (video.currentTime / video.duration) * 100;
+    }
+});
 video.addEventListener('loadedmetadata', () => {
     updateTime();
     updateControlIcons();
+    timeline.value = 0;
 });
 
 function updateVolumeIcons() {
@@ -82,9 +89,9 @@ function updateVolumeIcons() {
 }
 
 volumeRange.addEventListener('input', e => {
-    const v = Number(e.target.value) / 100;
-    video.volume = v;
-    muteBtn.setAttribute('aria-pressed', v === 0 ? 'true' : 'false');
+    const vol = Number(e.target.value) / 100;
+    video.volume = vol;
+    muteBtn.setAttribute('aria-pressed', vol === 0 ? 'true' : 'false');
     updateVolumeIcons();
 });
 
@@ -119,5 +126,40 @@ fullscreenBtn.addEventListener('click', async () => {
     }
 });
 
-updateTime();
-updateControlIcons();
+timeline.addEventListener('input', e => {
+    if (video.duration) {
+        const percent = Number(e.target.value);
+        video.currentTime = (percent / 100) * video.duration;
+    }
+});
+
+$(document).ready(() => {
+    let starsAnimated = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !starsAnimated) {
+                starsAnimated = true;
+                if ($(window).width() >= 1200) {
+                    $("#design-star-left").animate(
+                        { left: "-160px" },
+                        { duration: 750, easing: "swing" }
+                    );
+                    $("#design-star-right").animate(
+                        { right: "-160px" },
+                        { duration: 750, easing: "swing" }
+                    );
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.8
+    });
+
+    const target = document.getElementById("video");
+    if (target) observer.observe(target);
+
+    updateTime();
+    updateControlIcons();
+});

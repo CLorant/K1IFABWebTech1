@@ -30,7 +30,7 @@ function createCategoryPaneHTML(key, index, categoryId, tabId, productHTML) {
 function createProductHTML(item) {
     return `
     <div class="col-lg-4 col-md-6 col-12">
-        <div class="product-container">
+        <article class="product-container">
             <div class="product-img-container">
                 <img src="${item.img}" class="w-100 product-img" alt="${item.name} termék képe">
             </div>
@@ -48,46 +48,50 @@ function createProductHTML(item) {
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     </div>`;
 }
 
-async function populateMenu() {
-    try {
-        const response = await fetch('/data/menu.json');
-        const menu = await response.json();
+function populateMenu() {
+    const categoriesContainer = document.getElementById('product-categories');
+    const productsContainer = document.getElementById('products');
 
-        const categoriesContainer = document.getElementById('product-categories');
-        const productsContainer = document.getElementById('products');
+    categoriesContainer.innerHTML = "";
+    productsContainer.innerHTML = "";
 
-        categoriesContainer.innerHTML = "";
-        productsContainer.innerHTML = "";
+    $.ajax({
+        url: "/data/menu.json",
+        method: "GET",
+        dataType: "json",
 
-        const categoryKeys = Object.keys(menu);
+        success: (menu) => {
+            const categoryKeys = Object.keys(menu);
 
-        categoryKeys.forEach((key, index) => {
-            const category = menu[key];
-            const categoryId = `category-${index + 1}`;
-            const tabId = `${key}-products`;
+            categoryKeys.forEach((key, index) => {
+                const category = menu[key];
+                const categoryId = `category-${index + 1}`;
+                const tabId = `${key}-products`;
 
-            categoriesContainer.insertAdjacentHTML(
-                "beforeend",
-                createCategoryButtonHTML(category, index, categoryId, tabId)
-            );
+                categoriesContainer.insertAdjacentHTML(
+                    "beforeend",
+                    createCategoryButtonHTML(category, index, categoryId, tabId)
+                );
 
-            const productHTML = category.items
-                .map(item => createProductHTML(item))
-                .join("");
+                const productHTML = category.items
+                    .map(item => createProductHTML(item))
+                    .join("");
 
-            productsContainer.insertAdjacentHTML(
-                "beforeend",
-                createCategoryPaneHTML(key, index, categoryId, tabId, productHTML)
-            );
-        });
-    }
-    catch (error) {
-        console.error("Hiba történt a menü betöltésekor:", error);
-    }
+                productsContainer.insertAdjacentHTML(
+                    "beforeend",
+                    createCategoryPaneHTML(key, index, categoryId, tabId, productHTML)
+                );
+            });
+        },
+
+        error: (error) => {
+            console.error("Hiba történt a menü betöltésekor:", error);
+        }
+    });
 }
 
-document.addEventListener('DOMContentLoaded', populateMenu);
+document.addEventListener("DOMContentLoaded", populateMenu);

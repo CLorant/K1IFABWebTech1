@@ -49,7 +49,7 @@ header .logo {
 }
 
 .d-menu-point:hover {
-	background-color: rgba(var(--color-secondary), 50%);
+	background-color: var(--color-secondary);
 }
 
 #mobile-nav {
@@ -214,10 +214,6 @@ footer {
     margin-right: auto;
 }
 
-@media (min-width: 576px) {
-	
-}
-
 @media (min-width: 768px) {
     #desktop-nav {
         display: flex;
@@ -244,16 +240,4 @@ footer {
     header .logo {
         height: 58px;
     }
-}
-
-@media (min-width: 1024px) {
-
-}
-
-@media (min-width: 1200px) {
-	
-}
-
-@media (min-width: 1400px) {
-	
 }

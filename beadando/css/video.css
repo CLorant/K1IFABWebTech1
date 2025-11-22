@@ -1,20 +1,5 @@
 @import url('variables.css');
 
-.video-grid {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 1rem;
-    width: 40rem;
-}
-
-div.video-grid>div {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-
 .video-btn {
     width: 2.5rem;
     height: 2.5rem;
@@ -29,7 +14,9 @@ div.video-grid>div {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .video-wrapper {
@@ -37,12 +24,32 @@ div.video-grid>div {
     background: var(--color-black);
 }
 
+.video-timeline {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 6px;
+    appearance: none;
+    background: var(--color-gray);
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.video-timeline::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-main);
+}
+
 video {
     display: block;
     width: 980px;
     max-width: 100%;
     border-radius: 6px;
-    background: #000;
+    background: var(--color-secondary);
     margin: 0 auto;
 }
 
@@ -54,6 +61,7 @@ video {
     gap: 8px;
     flex-direction: row;
     align-items: stretch;
+    background: var(--color-darker);
     color: var(--color-white);
     font-size: 14px;
 }
@@ -66,7 +74,7 @@ video {
 }
 
 .video-btn {
-    background: var(--color-black);
+    background: var(--color-darker);
     color: var(--color-white);
     border: 0;
     padding: 8px 10px;
@@ -82,7 +90,7 @@ video {
 .time {
     min-width: 110px;
     text-align: left;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .slider-container {
@@ -98,14 +106,11 @@ video {
 input[type="range"].video-range {
     width: 120px;
     height: 6px;
-    background: #333;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .playback-btn {
-    background: #222;
-    color: #ddd;
     padding: 6px 8px;
     border-radius: 6px;
     border: 0;
@@ -117,6 +122,26 @@ input[type="range"].video-range {
     display: inline-block;
     width: 40px;
     text-align: center;
+}
+
+#design-star-left,
+#design-star-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    height: 500px;
+}
+
+#design-star-left {
+    left: -600px;
+}
+
+#design-star-right {
+    right: -600px;
 }
 
 @media (min-width:768px) {

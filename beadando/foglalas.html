@@ -42,7 +42,7 @@
 
     <section id="reservation">
         <div class="container">
-            <form action="" method="post" class="">
+            <form method="post">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
@@ -84,6 +84,7 @@
                                 <option value="19:00">
                                 <option value="20:00">
                             </datalist>
+                            <label for="time" id="timeLabel" class="form-label fs-15 d-none" style="color: red;">Nem megfelelő időpont</label>
                         </div>
                     </div>
 
@@ -113,7 +114,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-label fs-15 d-block mb-2">Különleges igények</label>
                             <div class="custom-control custom-checkbox">
@@ -134,6 +135,15 @@
                         </div>
                     </div>
 
+                    <div class="col-lg-6">
+                        <div id="color-wrapper" class="form-group d-none">
+                            <label class="form-label fs-15 d-block mb-2">Dekoráció színe (opcionális)</label>
+                            <div class="custom-control">
+                                <input type="color" class="custom-control-input" value="#002f6c">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-12">
                         <div class="form-group">
                             <textarea class="form-control default-input" aria-label="Megjegyzés" name="message"
@@ -147,7 +157,7 @@
                                 name="agree" required>
                             <label class="custom-control-label" for="agree">
                                 Elfogadom az
-                                    <a href="/assets/privacy-policy.pdf" class="contact-link" target="_blank">
+                                    <a href="/assets/privacy-policy.pdf" class="" target="_blank">
                                         Adatvédelmi irányelveket</a>.
                             </label>
                         </div>
@@ -166,10 +176,9 @@
     <footer id="footer"></footer>
 
     <script src="./plugins/jquery-3.5.1.js"></script>
-    <script src="./plugins/jquery-ui.js"></script>
     <script src="./plugins/bootstrap.bundle.min.js"></script>
     <script src="./js/layout.js"></script>
-    <script src="./js/menu.js"></script>
+    <script src="./js/reservation.js"></script>
 </body>
 
 </html>

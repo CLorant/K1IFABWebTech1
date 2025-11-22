@@ -39,7 +39,7 @@
             </div>
             <div class="container hero-text-container">
                 <div class="row hero-text-box">
-                    <div class="col-12 ">
+                    <div class="col-12">
                         <div>
                             <h1 class="mb-lg-4 mb-3">Western Bite Étterem</h1>
                             <p>
@@ -67,9 +67,12 @@
             <h2>Tekintsen be éttermünkbe!</h2>
         </div>
         <div class="container video-container">
+            <img src="/assets/img/design-stars-left.webp" id="design-star-left" class="d-none d-xl-block" alt="Dizájn csillagok bal">
+            
             <div class="video-wrapper">
-                <video src="./assets/western-bite-video.mp4" id="introduction-video" preload="metadata"></video>
+                <video src="./assets/western-bite.mp4" id="introduction-video" preload="metadata"></video>
 
+                <input id="timeline" class="video-timeline" type="range" min="0" max="100" value="0" aria-label="Video timeline">
                 <div class="video-controls" role="group" aria-label="Video controls">
                     <div class="controls-left">
                         <button id="control" class="video-btn" aria-label="Play">
@@ -119,6 +122,7 @@
                     </div>
                 </div>
             </div>
+            <img src="/assets/img/design-stars-right.webp" id="design-star-right" class="d-none d-xl-block" alt="Dizájn csillagok job">
         </div>
     </section>
 
@@ -248,7 +252,7 @@
                 <h2>Kapcsolat</h2>
                 <p>Kérdése van? Lépjen velünk kapcsolatba, örömmel segítünk!</p>
             </div>
-            <form action="" method="post" class="">
+            <form  method="post">
                 <div class="row">
                     <div class="col-lg-6">
                         <img src="./assets/img/contact.webp" class="contact-img mb-lg-0 mb-3" loading="lazy">
@@ -308,10 +312,10 @@
     <footer id="footer"></footer>
 
     <script src="./plugins/jquery-3.5.1.js"></script>
-    <script src="./plugins/jquery-ui.js"></script>
     <script src="./plugins/bootstrap.bundle.min.js"></script>
     <script src="./js/layout.js"></script>
     <script src="./js/video.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 
 </html>
