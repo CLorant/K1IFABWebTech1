@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JQuery feladatok</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
+    <header>
+        <h1>JQuery feladatok</h1>
+    </header>
+
     <section>
-        <h1></h1>
-        <p></p>
-        <form>
-            <label for=""></label>
-            <input type="text">
-            <label for=""></label>
-            <input type="email">
-            <label for=""></label>
-            <input type="password">
-            <button></button>
-        </form>
+        <div>
+            <p id="p1">
+                A JQuery egy JavaScript programozói könyvtár, amelyet John Resig kezdett fejleszteni. <b
+                    class="hide">Kattints ide, </b> és eltűnik!
+            </p>
+
+            <p id="p2">
+                Elterjedtnek tekinthető, segítségével könnyen bejárható egy HTML oldal DOM-ja. <b class="double-click">Kattints
+                    ide duplán, </b> és eltűnik!
+            </p>
+
+
+            <div>
+                <form>
+                    <label for="password">Név: </label>
+                    <input type="text" name="name" class="input"><br><br>
+                    <label for="password">E-mail: </label>
+                    <input type="email" name="email" class="input"><br><br>
+                    <label for="password">Jelszó: </label>
+                    <input type="password" name="password" class="input"><br><br><br>
+                </form>
+
+                <button id="btnJelentkezes">Jelentkezés</button>
+            </div>
+        </div>
     </section>
+    <script src="3.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,52 @@
+section {
+    width: 850px;
+    max-width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid gray;
+    height: 72px;
+}
+
+th {
+    background: lightgray;
+    height: 32px;
+}
+
+table th:first-child,
+table td:first-child {
+    width: 100px;
+}
+
+.bg-red {
+    background: rgb(224, 118, 118);
+}
+
+.bg-cyan {
+    background: rgb(146, 221, 221);
+}
+
+.bg-yellow {
+    background: rgb(255, 255, 139);
+}
+
+.bg-green {
+    background: rgb(139, 245, 139);
+}
+
+.bg-purple {
+    background: rgb(188, 164, 211);
+}
+
+.bg-blue {
+    background: rgb(152, 217, 255);
+}

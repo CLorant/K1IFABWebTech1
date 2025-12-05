@@ -18,11 +18,17 @@
         <button onclick="parseJSON()">JSON beolvasás</button>
     </section>
     <script>
-        const jsonText = `[{nev":"Nagy Ferenc","iranyitoszam":1234,"varos":"Miskolc","egyetem":"Miskolci Egyetem"}]`;
+        const jsonText = '{"nev": "Gipsz Jakab", "iranyitoszam": "3515", "varos": "Miskolc", "egyetem": "Miskolci Egyetem"}';
         function parseJSON() {
-            const json = JSON.stringify(jsonText);
+            const obj = JSON.parse(jsonText);
+            const output = "<strong>Név:</strong> " + obj.nev + "<br>" +
+                      "<strong>Irányítószám:</strong> " + obj.iranyitoszam + "<br>" +
+                      "<strong>Város:</strong> " + obj.varos + "<br>" +
+                      "<strong>Egyetem:</strong> " + obj.egyetem;
+            
             const jsonContent = document.getElementById('json-content');
-            jsonContent.innerHTML = json;
+
+            jsonContent.innerHTML = output;
         }
     </script>
 </body>

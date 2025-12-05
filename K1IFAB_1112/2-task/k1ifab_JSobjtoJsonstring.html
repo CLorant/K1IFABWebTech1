@@ -16,16 +16,20 @@
         <p id="json-content"></p>
         <button onclick="convertJSON()">JSON beolvasás</button>
     </section>
+
     <script>
-        const jsonString = '{"nev": "Minta Áron", "iranyitoszam": "1055", "varos": "Budapest", "egyetem": "BME"}';
+        const obj = {
+            nev: "Gipsz Jakab",
+            iranyitoszam: 3515,
+            varos: "Miskolc",
+            egyetem: "Miskolci Egyetem"
+        };
 
         function convertJSON() {
-            const student = JSON.parse(jsonString);
-            const jsonContent = document.getElementById('json-content');
-
-            jsonContent.innerHTML = student.nev + " (" + student.egyetem + ") - " + student.varos;
+            const json = JSON.stringify(obj);
+            document.getElementById("json-content").innerText = json;
         }
     </script>
-</body>
 
+</body>
 </html>

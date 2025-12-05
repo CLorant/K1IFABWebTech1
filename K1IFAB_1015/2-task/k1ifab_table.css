@@ -1,11 +1,20 @@
+table {
+    border-spacing: 0;
+    font-weight: bold;
+}
+
 th, td {
-    border: 1px solid black;
+    border: 1px solid gray;
     width: 100px;
     height: 100px;
 }
 
+th {
+    height: 64px;
+}
+
 .bg-gray {
-    background-color: gray;
+    background-color: lightgray;
 }
 
 .bg-red {
@@ -13,7 +22,7 @@ th, td {
 }
 
 .bg-beige {
-    background-color: beige;
+    background-color: rgb(255, 255, 145);
 }
 
 .bg-yellow {
@@ -34,6 +43,8 @@ th, td {
     text-align: center;
 }
 
-.overflow-scroll {
+.middle>div {
+    height: 200px;
     overflow: scroll;
+    text-align: justify;
 }

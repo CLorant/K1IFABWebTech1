@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON megvalósítása - JavaScript</title>
+</head>
+<body>
+    <section>
+        <h1>Könyvek listája</h1>
+        <p id="json-content"></p>
+        <button onclick="readJSON('k1ifab_konyv.json')">JSON beolvasás</button>
+    </section>
+
+    <script>
+        async function readJSON(filename) {
+            fetch(filename)
+                .then(response => response.json())
+                .then(data => {
+                    const jsonContent = document.getElementById('json-content');
+                    for (const key in data) {
+                        const output = "<strong>Cím:</strong> " + data[key].cim + "<br>" +
+                                   "<strong>Szerző:</strong> " + data[key].szerzo + "<br>" +
+                                   "<strong>Kiadás:</strong> " + data[key].kiadas;
+
+                        jsonContent.innerHTML += output + "<hr>";
+                    }
+                })
+                .catch(error => {
+                    console.error('Hiba történt:', error);
+                });
+        }
+    </script>
+</body>
+</html>

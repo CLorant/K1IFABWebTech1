@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
@@ -65,17 +65,16 @@
 </head>
 
 <body>
-
     <header>
         <h1>HTML5 Űrlap - K1IFAB</h1>
     </header>
 
     <section>
-        <form id="urlap" action="POST">
+        <form id="urlap" action="feldolgozo.php" method="post">
             <div class="form-group">
                 <label for="name">
                     Név:
-                    <input type="text" name="name" id="name" pattern="([A_ZÁÉÍÓÖŰÜ a-záéíóöűü]){4,}"
+                    <input type="text" name="nev" id="name" pattern="([A_ZÁÉÍÓÖŰÜ a-záéíóöűü]){4,}"
                         placeholder="Írd be a neved" title="Írd be a neved" required autofocus autocomplete="off">
                 </label>
             </div>
@@ -90,7 +89,7 @@
             <div class="form-group">
                 <label for="fruit">
                     Kedvenc gyümölcs:
-                    <input list="gyumolcsok" name="fruit" id="fruit" placeholder=""
+                    <input list="gyumolcsok" name="fav_fruit" id="fruit" placeholder=""
                         title="Alma, körte, szőlő, banán, barack">
                     <datalist id="gyumolcsok">
                         <option value="alma">Alma</option>
@@ -111,7 +110,7 @@
             <div class="form-group">
                 <label for="footsize">
                     Lábméret:
-                    <input type="number" name="footsize" id="footsize" min="25" max="50" step="0.5" placeholder=""
+                    <input type="number" name="feet_size" id="footsize" min="25" max="50" step="0.5" placeholder=""
                         title="25-50 közötti érték">
                 </label>
             </div>
